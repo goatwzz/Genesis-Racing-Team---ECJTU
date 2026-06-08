@@ -1,0 +1,26 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Control group cover</title>
+  <desc id="desc">电控组封面，包含芯片、波形和传感器控制元素。</desc>
+  <rect width="720" height="520" rx="28" fill="#EAF2FA"/>
+  <rect x="26" y="26" width="668" height="468" rx="30" fill="url(#bg)"/>
+  <text x="60" y="92" fill="#1D3448" font-size="42" font-family="Microsoft YaHei, Arial, sans-serif" font-weight="800" letter-spacing="3">CONTROL</text>
+  <rect x="248" y="156" width="224" height="224" rx="34" fill="#F8FCFF" stroke="#7BA8C8" stroke-width="8"/>
+  <rect x="308" y="216" width="104" height="104" rx="18" fill="#DCECF9" stroke="#1D6FB8" stroke-width="7"/>
+  <path d="M176 206H248" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M176 266H248" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M176 326H248" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M472 206H544" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M472 266H544" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M472 326H544" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M144 406C180 406 184 196 220 196C256 196 260 336 296 336C332 336 336 214 372 214C408 214 412 352 448 352C484 352 488 254 524 254" stroke="#F39C45" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M116 156C130 136 146 122 170 116" stroke="#46B68A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="596" cy="182" r="42" fill="#F8FCFF" stroke="#7BA8C8" stroke-width="6"/>
+  <path d="M578 182H614" stroke="#1D6FB8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M596 164V200" stroke="#1D6FB8" stroke-width="7" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="56" x2="642" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E2EEF7"/>
+      <stop offset="1" stop-color="#D2E2EF"/>
+    </linearGradient>
+  </defs>
+</svg>

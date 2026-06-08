@@ -1,0 +1,31 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Mechanical group cover</title>
+  <desc id="desc">机械组封面，包含底盘、机械臂和结构装配元素。</desc>
+  <rect width="720" height="520" rx="28" fill="#EDF4FA"/>
+  <rect x="26" y="26" width="668" height="468" rx="30" fill="url(#bg)"/>
+  <text x="60" y="92" fill="#1D3448" font-size="36" font-family="Microsoft YaHei, Arial, sans-serif" font-weight="800" letter-spacing="2">MECHANICAL</text>
+  <path d="M140 338H536L504 236H172L140 338Z" fill="#F8FCFF" stroke="#1D3448" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="212" cy="362" r="40" fill="#DCEAF5" stroke="#1D3448" stroke-width="7"/>
+  <circle cx="212" cy="362" r="16" fill="#FFFFFF" stroke="#1D3448" stroke-width="5"/>
+  <circle cx="460" cy="362" r="40" fill="#DCEAF5" stroke="#1D3448" stroke-width="7"/>
+  <circle cx="460" cy="362" r="16" fill="#FFFFFF" stroke="#1D3448" stroke-width="5"/>
+  <path d="M246 260H436" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M284 298H402" stroke="#1D6FB8" stroke-width="9" stroke-linecap="round"/>
+  <path d="M454 150L522 114L570 154L522 212" stroke="#F39C45" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="454" cy="150" r="10" fill="#F39C45"/>
+  <circle cx="522" cy="114" r="10" fill="#F39C45"/>
+  <circle cx="570" cy="154" r="10" fill="#F39C45"/>
+  <circle cx="522" cy="212" r="10" fill="#F39C45"/>
+  <circle cx="170" cy="168" r="58" fill="#F8FCFF" stroke="#7BA8C8" stroke-width="7"/>
+  <circle cx="170" cy="168" r="24" fill="#DDECF8" stroke="#1D3448" stroke-width="6"/>
+  <path d="M170 102V122" stroke="#1D3448" stroke-width="8" stroke-linecap="round"/>
+  <path d="M170 214V234" stroke="#1D3448" stroke-width="8" stroke-linecap="round"/>
+  <path d="M104 168H124" stroke="#1D3448" stroke-width="8" stroke-linecap="round"/>
+  <path d="M216 168H236" stroke="#1D3448" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="82" y1="58" x2="644" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E1EDF7"/>
+      <stop offset="1" stop-color="#D2E2EF"/>
+    </linearGradient>
+  </defs>
+</svg>

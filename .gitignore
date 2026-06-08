@@ -1,0 +1,9 @@
+tmp/
+智能车队员信息/
+
+data/*.doc
+data/*.docx
+data/*.pdf
+
+.DS_Store
+Thumbs.db

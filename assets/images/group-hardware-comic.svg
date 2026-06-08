@@ -1,0 +1,26 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PCB group cover</title>
+  <desc id="desc">硬件组封面，包含 PCB、焊点和电路元件元素。</desc>
+  <rect width="720" height="520" rx="28" fill="#ECF5FA"/>
+  <rect x="26" y="26" width="668" height="468" rx="30" fill="url(#bg)"/>
+  <text x="60" y="92" fill="#1D3448" font-size="44" font-family="Microsoft YaHei, Arial, sans-serif" font-weight="800" letter-spacing="3">PCB</text>
+  <rect x="126" y="138" width="470" height="248" rx="30" fill="#147C72" stroke="#1D3448" stroke-width="8"/>
+  <rect x="292" y="208" width="136" height="104" rx="18" fill="#F8FCFF" stroke="#1D3448" stroke-width="6"/>
+  <path d="M170 188H246V230H170" stroke="#F2C15B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M474 188H548V230H474" stroke="#B8F0E6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M170 294H246V338H170" stroke="#F2C15B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M474 294H548V338H474" stroke="#B8F0E6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M246 208H292" stroke="#F2C15B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M428 208H474" stroke="#B8F0E6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M246 316H292" stroke="#F2C15B" stroke-width="8" stroke-linecap="round"/>
+  <path d="M428 316H474" stroke="#B8F0E6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M596 138L652 92" stroke="#F39C45" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="580" cy="150" r="14" fill="#F39C45"/>
+  <path d="M598 156L616 174" stroke="#F39C45" stroke-width="8" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="56" x2="646" y2="454" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E1EDF7"/>
+      <stop offset="1" stop-color="#D2E2EF"/>
+    </linearGradient>
+  </defs>
+</svg>

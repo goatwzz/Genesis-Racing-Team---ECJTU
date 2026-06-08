@@ -1,0 +1,48 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">ECJTU Genesis intelligent vehicle team emblem</title>
+  <desc id="desc">A clean temporary emblem for ECJTU Genesis intelligent vehicle team with a G monogram, circuit traces, code mark, chip and smart car silhouette.</desc>
+  <defs>
+    <linearGradient id="blue" x1="31" y1="42" x2="130" y2="134" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#72D0FF"/>
+      <stop offset="1" stop-color="#2678E8"/>
+    </linearGradient>
+    <linearGradient id="red" x1="45" y1="132" x2="130" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7192A"/>
+      <stop offset="1" stop-color="#FF4456"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="7" y="7" width="146" height="146" rx="24" fill="#0D1720"/>
+  <rect x="15" y="15" width="130" height="130" rx="18" stroke="#F6F8FA" stroke-width="5"/>
+  <rect x="23" y="23" width="114" height="114" rx="12" stroke="#F6F8FA" stroke-opacity="0.3" stroke-width="2"/>
+
+  <text x="80" y="42" text-anchor="middle" fill="#F6F8FA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">ECJTU</text>
+  <text x="80" y="56" text-anchor="middle" fill="#6BC9FF" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="800">GENESIS SMART CAR</text>
+
+  <path d="M45 84C45 64.2 60.2 51 80.4 51C91.5 51 101 55.2 107.5 62.3L98.4 70.7C94.1 66.3 88 63.9 80.9 63.9C68.4 63.9 59.6 72.3 59.6 84.3C59.6 96.9 68.6 105 81.8 105C88.1 105 93.9 103.2 98.6 99.8V93.2H81.7V81.4H112V106.1C104.4 113.5 94.2 117.6 81 117.6C59.6 117.6 45 103.7 45 84Z" fill="#F8FAFC"/>
+
+  <path d="M104 116C119.3 112.6 128 101.8 128 85.2V72" stroke="url(#blue)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M116 117.5C129.2 111.4 136 99.6 136 83.2V72" stroke="url(#red)" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M33 66H48" stroke="#68C8FF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M33 80H43" stroke="#68C8FF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M33 94H48" stroke="#68C8FF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="31" cy="66" r="4.5" fill="#68C8FF"/>
+  <circle cx="31" cy="80" r="4.5" fill="#68C8FF"/>
+  <circle cx="31" cy="94" r="4.5" fill="#68C8FF"/>
+
+  <path d="M113 66H129" stroke="#68C8FF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M120 80H129" stroke="#68C8FF" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="131" cy="66" r="4.5" fill="#68C8FF"/>
+  <circle cx="131" cy="80" r="4.5" fill="#68C8FF"/>
+
+  <text x="42" y="73" text-anchor="middle" fill="#68C8FF" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="900">&lt;/&gt;</text>
+
+  <rect x="58" y="121" width="44" height="13" rx="4" fill="#122536" stroke="#68C8FF" stroke-width="2"/>
+  <path d="M64 125H96M64 130H96" stroke="#68C8FF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M67 118V113M78 118V113M89 118V113M67 139V134M78 139V134M89 139V134" stroke="#68C8FF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M42 134H113C125 134 133 127.4 137 116" stroke="url(#blue)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M43 140H116C129.2 140 139 130.8 143 117" stroke="url(#red)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="59" cy="140" r="6" fill="#F8FAFC"/>
+  <circle cx="112" cy="140" r="6" fill="#F8FAFC"/>
+</svg>

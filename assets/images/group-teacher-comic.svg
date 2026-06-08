@@ -1,0 +1,39 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Tutor group cover</title>
+  <desc id="desc">导师组封面，使用书本、批注和灯泡表达指导与启发。</desc>
+  <rect width="720" height="520" rx="28" fill="#EAF3FA"/>
+  <rect x="26" y="26" width="668" height="468" rx="30" fill="url(#bg)"/>
+  <text x="54" y="86" fill="#1D3448" font-size="44" font-family="Microsoft YaHei, Arial, sans-serif" font-weight="800" letter-spacing="3">TUTOR</text>
+  <rect x="56" y="106" width="608" height="300" rx="26" fill="url(#panel)"/>
+  <g>
+    <rect x="92" y="164" width="250" height="156" rx="22" fill="#F8FCFF" stroke="#8CB2D0" stroke-width="6"/>
+    <path d="M126 188H208C224 188 238 201 238 218V284H156C139 284 126 271 126 254V188Z" fill="#FFFFFF" stroke="#5B90BD" stroke-width="6"/>
+    <path d="M238 218L278 196C289 190 302 198 302 210V284H238V218Z" fill="#EDF6FD" stroke="#5B90BD" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M156 214H210" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <path d="M156 240H208" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <path d="M156 266H196" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="142" cy="214" r="7" fill="#F39C45"/>
+  </g>
+  <g>
+    <rect x="406" y="154" width="188" height="142" rx="22" fill="#F8FCFF" stroke="#8CB2D0" stroke-width="6"/>
+    <path d="M438 194H528" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <path d="M438 224H560" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <path d="M438 254H516" stroke="#9FC0DA" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="554" cy="246" r="40" fill="#FFF7E8" stroke="#F39C45" stroke-width="8"/>
+    <circle cx="554" cy="246" r="19" fill="#FFFFFF" stroke="#2E587C" stroke-width="6"/>
+    <path d="M582 274L616 308" stroke="#2E587C" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="456" cy="186" r="8" fill="#F39C45"/>
+    <path d="M592 170L614 150" stroke="#F39C45" stroke-width="7" stroke-linecap="round"/>
+    <path d="M614 198H640" stroke="#F39C45" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="82" y1="54" x2="646" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E1EDF7"/>
+      <stop offset="1" stop-color="#D2E2EF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="104" y1="118" x2="610" y2="388" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCEAF6"/>
+      <stop offset="1" stop-color="#C8DDEF"/>
+    </linearGradient>
+  </defs>
+</svg>

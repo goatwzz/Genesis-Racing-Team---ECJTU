@@ -1,0 +1,29 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Management group cover</title>
+  <desc id="desc">综合管理封面，包含任务板、流程线和计划模块。</desc>
+  <rect width="720" height="520" rx="28" fill="#EEF5FB"/>
+  <rect x="26" y="26" width="668" height="468" rx="30" fill="url(#bg)"/>
+  <text x="60" y="92" fill="#1D3448" font-size="38" font-family="Microsoft YaHei, Arial, sans-serif" font-weight="800" letter-spacing="2">MANAGEMENT</text>
+  <rect x="92" y="138" width="536" height="280" rx="28" fill="#F8FCFF" stroke="#79A9C7" stroke-width="6"/>
+  <rect x="122" y="174" width="130" height="36" rx="12" fill="#1D6FB8" fill-opacity=".14"/>
+  <rect x="270" y="174" width="92" height="36" rx="12" fill="#F39C45" fill-opacity=".18"/>
+  <rect x="378" y="174" width="100" height="36" rx="12" fill="#1DB58C" fill-opacity=".16"/>
+  <rect x="496" y="174" width="102" height="36" rx="12" fill="#1D6FB8" fill-opacity=".14"/>
+  <rect x="122" y="242" width="110" height="72" rx="18" fill="#FFFFFF" stroke="#93B8D1" stroke-width="5"/>
+  <rect x="274" y="228" width="144" height="86" rx="18" fill="#FFFFFF" stroke="#93B8D1" stroke-width="5"/>
+  <rect x="462" y="242" width="118" height="72" rx="18" fill="#FFFFFF" stroke="#93B8D1" stroke-width="5"/>
+  <path d="M232 278H274" stroke="#F39C45" stroke-width="8" stroke-linecap="round"/>
+  <path d="M418 270H462" stroke="#1DB58C" stroke-width="8" stroke-linecap="round"/>
+  <path d="M178 314V354H526V314" stroke="#1D6FB8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="178" cy="314" r="14" fill="#1D6FB8"/>
+  <circle cx="526" cy="314" r="14" fill="#1DB58C"/>
+  <rect x="170" y="384" width="100" height="18" rx="9" fill="#1D6FB8" fill-opacity=".18"/>
+  <rect x="292" y="384" width="132" height="18" rx="9" fill="#F39C45" fill-opacity=".2"/>
+  <rect x="446" y="384" width="82" height="18" rx="9" fill="#1DB58C" fill-opacity=".18"/>
+  <defs>
+    <linearGradient id="bg" x1="82" y1="54" x2="644" y2="460" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E3EEF7"/>
+      <stop offset="1" stop-color="#D2E3F0"/>
+    </linearGradient>
+  </defs>
+</svg>
