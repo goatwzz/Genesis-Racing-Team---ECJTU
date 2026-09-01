@@ -1,9 +1,13 @@
 tmp/
 智能车队员信息/
+node_modules/
+tools/
+获奖汇总/
 
 data/*.doc
 data/*.docx
 data/*.pdf
+*.xlsx
 
 .DS_Store
 Thumbs.db

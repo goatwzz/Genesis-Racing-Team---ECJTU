@@ -1,4 +1,4 @@
-# 起源 Genesis 智能车队官网
+# Genesis 起源智能车队官网
 
 这是一个无构建依赖的静态网站，可以直接发布到 GitHub Pages、Vercel 或 Netlify。
 
@@ -13,6 +13,7 @@ script.js
 assets/
 data/members-template.csv
 data/awards-template.csv
+data/member-awards-20260901.js
 ```
 
 下面这些目录或文件不需要对外发布：
@@ -76,8 +77,7 @@ https://你的用户名.github.io/仓库名/
 ## 说明
 
 - 网站是纯静态站点，不依赖 Node.js、Python 后端或数据库。
-- 页面里的提问表单目前使用 `localStorage`，只能保存在访问者自己的浏览器里，不会同步到其他人。
-- 如果后续要做“所有访问者都能看到的提问和回复”，需要再接一个后端或表单服务。
+- 页面里的提问入口已跳转到统一金山文档链接，网站本身不保存访客提交内容。
 
 ## 后续维护
 
