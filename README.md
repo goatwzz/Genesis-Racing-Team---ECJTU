@@ -14,6 +14,7 @@ assets/
 data/members-template.csv
 data/awards-template.csv
 data/member-awards-20260901.js
+likes-config.js
 ```
 
 下面这些目录或文件不需要对外发布：
@@ -76,8 +77,28 @@ https://你的用户名.github.io/仓库名/
 
 ## 说明
 
-- 网站是纯静态站点，不依赖 Node.js、Python 后端或数据库。
+- 网站主体仍是纯静态站点，不依赖 Node.js 或 Python 后端；点赞功能单独使用 Supabase 保存共享计数。
 - 页面里的提问入口已跳转到统一金山文档链接，网站本身不保存访客提交内容。
+
+## 配置全站点赞
+
+点赞总数使用 Supabase 免费数据库保存，这样不同访客和不同设备都能看到同一个数字。
+
+1. 在 [Supabase](https://supabase.com/) 新建项目。
+2. 打开项目的 `SQL Editor`，复制并运行 `supabase-likes.sql` 的全部内容。
+3. 点击项目顶部的 `Connect`，复制 Project URL 和 Publishable key；也可以在 `Settings -> API Keys` 中找到它们。
+4. 把这两个值填入 `likes-config.js`：
+
+```js
+window.GENESIS_LIKES_CONFIG = {
+  supabaseUrl: "https://你的项目.supabase.co",
+  supabaseAnonKey: "你的 sb_publishable_... key"
+};
+```
+
+5. 重新提交并发布网站。
+
+Publishable key 本来就是提供给浏览器使用的公钥，可以随网页发布；不要填写 Secret 或 `service_role` key。旧版 anon key 也可以继续使用。当前实现使用浏览器本地记录避免普通用户重复点赞，清理浏览器数据或换设备后仍可再次点赞。若需要严格的一人一票，应增加登录、验证码或服务端限流。
 
 ## 后续维护
 

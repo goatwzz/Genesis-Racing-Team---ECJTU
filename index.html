@@ -372,6 +372,20 @@
       </section>
     </main>
 
+    <section class="site-like" aria-labelledby="site-like-title">
+      <div class="site-like-copy">
+        <span class="site-like-kicker">为起源加油</span>
+        <h2 id="site-like-title">喜欢我们的网站吗？</h2>
+        <p>点亮一颗红心，你的支持会计入所有访客共同看到的总数。</p>
+      </div>
+      <button class="site-like-button" type="button" data-like-button disabled aria-describedby="site-like-status">
+        <span class="site-like-heart" aria-hidden="true">♥</span>
+        <span data-like-button-text>正在读取</span>
+        <strong data-like-count aria-label="点赞数">--</strong>
+      </button>
+      <p class="site-like-status" id="site-like-status" data-like-status aria-live="polite"></p>
+    </section>
+
     <footer class="site-footer">
       <div>
         <strong>Genesis 起源智能车队</strong>
@@ -397,6 +411,7 @@
     </div>
 
     <script src="data/member-awards-20260901.js?v=20260901"></script>
-    <script src="script.js?v=awards-20260901"></script>
+    <script src="likes-config.js?v=20260902"></script>
+    <script src="script.js?v=likes-20260902"></script>
   </body>
 </html>

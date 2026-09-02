@@ -1750,6 +1750,88 @@ a {
   margin: 0 0 12px;
 }
 
+.site-like {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px 32px;
+  padding: 40px clamp(20px, 6vw, 90px);
+  color: var(--white);
+  background: linear-gradient(120deg, #971f2c, #d63b43);
+}
+
+.site-like-kicker {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.site-like h2,
+.site-like p {
+  margin: 0;
+}
+
+.site-like h2 {
+  font-size: clamp(24px, 3vw, 38px);
+}
+
+.site-like-copy p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 156px;
+  padding: 13px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: #a4212e;
+  background: var(--white);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.site-like-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(75, 5, 13, 0.24);
+}
+
+.site-like-button:disabled {
+  cursor: default;
+  opacity: 0.78;
+}
+
+.site-like-button.is-liked {
+  color: var(--white);
+  background: rgba(83, 11, 20, 0.42);
+}
+
+.site-like-heart {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.site-like-button strong {
+  padding-left: 9px;
+  border-left: 1px solid currentColor;
+  font-variant-numeric: tabular-nums;
+}
+
+.site-like-status {
+  grid-column: 1 / -1;
+  min-height: 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -1915,6 +1997,16 @@ a {
   }
 
   .honor-badge {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-like {
+    grid-template-columns: 1fr;
+  }
+
+  .site-like-button {
     justify-self: start;
   }
 }

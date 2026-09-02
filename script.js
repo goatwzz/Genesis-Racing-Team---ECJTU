@@ -1293,7 +1293,85 @@ const profileMainTitle = document.querySelector("[data-profile-main-title]");
 const profileMeta = document.querySelector("[data-profile-meta]");
 const profileSideDetails = document.querySelector("[data-profile-side-details]");
 const profileSections = document.querySelector("[data-profile-sections]");
+const likeButton = document.querySelector("[data-like-button]");
+const likeButtonText = document.querySelector("[data-like-button-text]");
+const likeCount = document.querySelector("[data-like-count]");
+const likeStatus = document.querySelector("[data-like-status]");
 let activeGroup = teamGroups[0].name;
+
+const LIKE_STORAGE_KEY = "genesis-site-liked-v1";
+
+function getLikesConfig() {
+  const config = window.GENESIS_LIKES_CONFIG || {};
+  return {
+    supabaseUrl: String(config.supabaseUrl || "").replace(/\/$/, ""),
+    supabaseAnonKey: String(config.supabaseAnonKey || "")
+  };
+}
+
+async function callLikesApi(functionName) {
+  const { supabaseUrl, supabaseAnonKey } = getLikesConfig();
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error("LIKES_NOT_CONFIGURED");
+  }
+  const headers = {
+    apikey: supabaseAnonKey,
+    "Content-Type": "application/json"
+  };
+  // 旧版 anon key 本身是 JWT；新版 sb_publishable_* 只作为 apikey 发送。
+  if (supabaseAnonKey.startsWith("eyJ")) {
+    headers.Authorization = `Bearer ${supabaseAnonKey}`;
+  }
+  const response = await fetch(`${supabaseUrl}/rest/v1/rpc/${functionName}`, {
+    method: "POST",
+    headers,
+    body: "{}"
+  });
+  if (!response.ok) {
+    throw new Error(`LIKES_API_${response.status}`);
+  }
+  return Number(await response.json());
+}
+
+function setLikeButtonState(hasLiked) {
+  likeButton.classList.toggle("is-liked", hasLiked);
+  likeButton.disabled = hasLiked;
+  likeButtonText.textContent = hasLiked ? "已点赞" : "点赞";
+}
+
+async function initializeLikes() {
+  if (!likeButton) return;
+  try {
+    const count = await callLikesApi("get_site_likes");
+    likeCount.textContent = count.toLocaleString("zh-CN");
+    setLikeButtonState(localStorage.getItem(LIKE_STORAGE_KEY) === "1");
+    likeStatus.textContent = "点赞总数会在所有访客之间同步。";
+  } catch (error) {
+    likeButton.disabled = true;
+    likeButtonText.textContent = "暂不可用";
+    likeCount.textContent = "--";
+    likeStatus.textContent = error.message === "LIKES_NOT_CONFIGURED"
+      ? "站长尚未完成点赞服务配置。"
+      : "点赞数读取失败，请稍后再试。";
+  }
+}
+
+async function submitLike() {
+  if (!likeButton || likeButton.disabled) return;
+  likeButton.disabled = true;
+  likeButtonText.textContent = "提交中";
+  likeStatus.textContent = "";
+  try {
+    const count = await callLikesApi("increment_site_likes");
+    localStorage.setItem(LIKE_STORAGE_KEY, "1");
+    likeCount.textContent = count.toLocaleString("zh-CN");
+    setLikeButtonState(true);
+    likeStatus.textContent = "谢谢你的支持！";
+  } catch (error) {
+    setLikeButtonState(false);
+    likeStatus.textContent = "点赞没有提交成功，请稍后重试。";
+  }
+}
 
 function formatProfileText(text, className = "") {
   const value = String(text || "").trim();
@@ -1837,6 +1915,8 @@ scrollTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+likeButton?.addEventListener("click", submitLike);
+
 window.addEventListener("scroll", updateHeader, { passive: true });
 window.addEventListener("popstate", () => {
   showPage(window.location.hash.slice(1) || "home", false);
@@ -1845,4 +1925,5 @@ window.addEventListener("popstate", () => {
 renderFilters();
 renderGroupCards();
 renderCards();
+initializeLikes();
 showPage(window.location.hash.slice(1) || "home", false);
