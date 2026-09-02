@@ -100,6 +100,15 @@ window.GENESIS_LIKES_CONFIG = {
 
 Publishable key 本来就是提供给浏览器使用的公钥，可以随网页发布；不要填写 Secret 或 `service_role` key。旧版 anon key 也可以继续使用。当前实现使用浏览器本地记录避免普通用户重复点赞，清理浏览器数据或换设备后仍可再次点赞。若需要严格的一人一票，应增加登录、验证码或服务端限流。
 
+## 配置后台留言
+
+1. 进入同一个 Supabase 项目的 `SQL Editor`。
+2. 新建 Query，复制并运行 `supabase-messages.sql` 的全部内容。
+3. 网站会使用已有的 `likes-config.js` 连接信息提交留言，无需增加新的密钥。
+4. 管理员可在 Supabase 的 `Table Editor -> site_messages` 中查看称呼、留言内容和提交时间。
+
+留言表没有向匿名访客开放读取、修改或删除权限，网页只能调用受限函数新增留言。前端会限制留言为 2–500 个字符，并对同一浏览器设置一分钟提交间隔；若网站公开访问量较大，建议后续再增加验证码或 Edge Function 服务端限流。
+
 ## 后续维护
 
 - 成员、技术方向、奖项、动态数据主要在 `script.js` 中维护。

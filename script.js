@@ -1297,9 +1297,17 @@ const likeButton = document.querySelector("[data-like-button]");
 const likeButtonText = document.querySelector("[data-like-button-text]");
 const likeCount = document.querySelector("[data-like-count]");
 const likeStatus = document.querySelector("[data-like-status]");
+const messageForm = document.querySelector("[data-message-form]");
+const homeMessageSection = document.querySelector("[data-home-message]");
+const messageContent = messageForm?.querySelector('[name="messageContent"]');
+const messageCount = document.querySelector("[data-message-count]");
+const messageSubmit = document.querySelector("[data-message-submit]");
+const messageFeedback = document.querySelector("[data-message-feedback]");
 let activeGroup = teamGroups[0].name;
 
 const LIKE_STORAGE_KEY = "genesis-site-liked-v1";
+const MESSAGE_COOLDOWN_KEY = "genesis-message-last-submit-v1";
+const MESSAGE_COOLDOWN_MS = 60 * 1000;
 
 function getLikesConfig() {
   const config = window.GENESIS_LIKES_CONFIG || {};
@@ -1309,7 +1317,7 @@ function getLikesConfig() {
   };
 }
 
-async function callLikesApi(functionName) {
+async function callSupabaseRpc(functionName, payload = {}) {
   const { supabaseUrl, supabaseAnonKey } = getLikesConfig();
   if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error("LIKES_NOT_CONFIGURED");
@@ -1325,7 +1333,7 @@ async function callLikesApi(functionName) {
   const response = await fetch(`${supabaseUrl}/rest/v1/rpc/${functionName}`, {
     method: "POST",
     headers,
-    body: "{}"
+    body: JSON.stringify(payload)
   });
   if (!response.ok) {
     throw new Error(`LIKES_API_${response.status}`);
@@ -1333,10 +1341,14 @@ async function callLikesApi(functionName) {
   return Number(await response.json());
 }
 
+async function callLikesApi(functionName) {
+  return callSupabaseRpc(functionName);
+}
+
 function setLikeButtonState(hasLiked) {
   likeButton.classList.toggle("is-liked", hasLiked);
   likeButton.disabled = hasLiked;
-  likeButtonText.textContent = hasLiked ? "已点赞" : "点赞";
+  likeButtonText.textContent = hasLiked ? "已为起源智能车队点赞" : "为起源智能车队点赞";
 }
 
 async function initializeLikes() {
@@ -1345,7 +1357,7 @@ async function initializeLikes() {
     const count = await callLikesApi("get_site_likes");
     likeCount.textContent = count.toLocaleString("zh-CN");
     setLikeButtonState(localStorage.getItem(LIKE_STORAGE_KEY) === "1");
-    likeStatus.textContent = "点赞总数会在所有访客之间同步。";
+    likeStatus.textContent = "";
   } catch (error) {
     likeButton.disabled = true;
     likeButtonText.textContent = "暂不可用";
@@ -1370,6 +1382,57 @@ async function submitLike() {
   } catch (error) {
     setLikeButtonState(false);
     likeStatus.textContent = "点赞没有提交成功，请稍后重试。";
+  }
+}
+
+function setMessageFeedback(text, type = "") {
+  if (!messageFeedback) return;
+  messageFeedback.textContent = text;
+  messageFeedback.classList.toggle("is-success", type === "success");
+  messageFeedback.classList.toggle("is-error", type === "error");
+}
+
+async function submitMessage(event) {
+  event.preventDefault();
+  if (!messageForm || !messageSubmit) return;
+  const formData = new FormData(messageForm);
+  if (String(formData.get("website") || "").trim()) return;
+
+  const visitorName = String(formData.get("visitorName") || "").trim();
+  const content = String(formData.get("messageContent") || "").trim();
+  if (content.length < 2 || content.length > 500) {
+    setMessageFeedback("留言内容需为 2–500 个字符。", "error");
+    return;
+  }
+
+  const lastSubmittedAt = Number(localStorage.getItem(MESSAGE_COOLDOWN_KEY) || 0);
+  if (Date.now() - lastSubmittedAt < MESSAGE_COOLDOWN_MS) {
+    setMessageFeedback("请稍候一分钟再提交新的留言。", "error");
+    return;
+  }
+
+  messageSubmit.disabled = true;
+  messageSubmit.textContent = "正在提交";
+  setMessageFeedback("");
+  try {
+    await callSupabaseRpc("submit_site_message", {
+      p_name: visitorName || null,
+      p_content: content
+    });
+    localStorage.setItem(MESSAGE_COOLDOWN_KEY, String(Date.now()));
+    messageForm.reset();
+    messageCount.textContent = "0";
+    setMessageFeedback("留言已提交，感谢你的反馈。", "success");
+  } catch (error) {
+    setMessageFeedback(
+      error.message === "LIKES_NOT_CONFIGURED"
+        ? "留言服务尚未完成配置。"
+        : "提交失败，请稍后重试。",
+      "error"
+    );
+  } finally {
+    messageSubmit.disabled = false;
+    messageSubmit.textContent = "提交留言";
   }
 }
 
@@ -1793,6 +1856,10 @@ function showPage(pageId, shouldUpdateHash = true) {
     view.classList.toggle("is-active", view.id === targetId);
   });
 
+  if (homeMessageSection) {
+    homeMessageSection.hidden = targetId !== "home";
+  }
+
   internalLinks.forEach((link) => {
     const href = link.getAttribute("href");
     link.classList.toggle("is-active", href === `#${targetId}`);
@@ -1916,6 +1983,10 @@ scrollTopButton.addEventListener("click", () => {
 });
 
 likeButton?.addEventListener("click", submitLike);
+messageContent?.addEventListener("input", () => {
+  messageCount.textContent = String(messageContent.value.length);
+});
+messageForm?.addEventListener("submit", submitMessage);
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 window.addEventListener("popstate", () => {

@@ -6,7 +6,7 @@
     <meta name="description" content="华东交通大学 Genesis 起源智能车队官网，展示实验室介绍、成员风采、技术方向、竞赛荣誉与招新信息。">
     <title>Genesis 起源智能车队 | 华东交通大学</title>
     <link rel="icon" href="assets/images/genesis-team-emblem.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=awards-20260901">
+    <link rel="stylesheet" href="styles.css?v=home-message-20260902">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -372,27 +372,48 @@
       </section>
     </main>
 
-    <section class="site-like" aria-labelledby="site-like-title">
-      <div class="site-like-copy">
-        <span class="site-like-kicker">为起源加油</span>
-        <h2 id="site-like-title">喜欢我们的网站吗？</h2>
-        <p>点亮一颗红心，你的支持会计入所有访客共同看到的总数。</p>
+    <section class="site-message" aria-labelledby="site-message-title" data-home-message>
+      <div class="site-message-heading">
+        <span>联系我们</span>
+        <h2 id="site-message-title">给起源智能车队留言</h2>
+        <p>欢迎提交建议、合作意向或想了解的问题，留言将发送至车队后台。</p>
       </div>
-      <button class="site-like-button" type="button" data-like-button disabled aria-describedby="site-like-status">
-        <span class="site-like-heart" aria-hidden="true">♥</span>
-        <span data-like-button-text>正在读取</span>
-        <strong data-like-count aria-label="点赞数">--</strong>
-      </button>
-      <p class="site-like-status" id="site-like-status" data-like-status aria-live="polite"></p>
+      <form class="site-message-form" data-message-form>
+        <label>
+          <span>称呼 <small>选填</small></span>
+          <input type="text" name="visitorName" maxlength="40" autocomplete="name" placeholder="你的称呼">
+        </label>
+        <label class="site-message-content">
+          <span>留言内容</span>
+          <textarea name="messageContent" minlength="2" maxlength="500" rows="5" required placeholder="请输入留言内容"></textarea>
+        </label>
+        <label class="message-honeypot" aria-hidden="true">
+          <span>请勿填写</span>
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+        <div class="site-message-actions">
+          <span><span data-message-count>0</span>/500</span>
+          <button type="submit" data-message-submit>提交留言</button>
+        </div>
+        <p class="site-message-feedback" data-message-feedback aria-live="polite"></p>
+      </form>
     </section>
 
     <footer class="site-footer">
-      <div>
+      <div class="footer-identity">
         <strong>Genesis 起源智能车队</strong>
         <span>求真与细，成事以恒</span>
         <span>华东交通大学南区基础实验大楼31栋102智行智能汽车实验室</span>
       </div>
-      <button class="footer-top" type="button" data-scroll-top>返回顶部</button>
+      <div class="footer-actions">
+        <button class="site-like-button" type="button" data-like-button disabled aria-describedby="site-like-status">
+          <span class="site-like-heart" aria-hidden="true">♥</span>
+          <span data-like-button-text>正在读取</span>
+          <strong data-like-count aria-label="点赞数">--</strong>
+        </button>
+        <button class="footer-top" type="button" data-scroll-top>返回顶部</button>
+        <p class="site-like-status" id="site-like-status" data-like-status aria-live="polite"></p>
+      </div>
     </footer>
 
     <div class="member-modal" data-member-modal aria-hidden="true">
@@ -412,6 +433,6 @@
 
     <script src="data/member-awards-20260901.js?v=20260901"></script>
     <script src="likes-config.js?v=20260902"></script>
-    <script src="script.js?v=likes-20260902"></script>
+    <script src="script.js?v=home-message-20260902"></script>
   </body>
 </html>
