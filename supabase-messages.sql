@@ -4,11 +4,19 @@ create table if not exists public.site_messages (
   visitor_name text,
   message_content text not null,
   created_at timestamptz not null default now(),
+  is_approved boolean not null default false,
+  approved_at timestamptz,
   constraint site_messages_name_length check (char_length(visitor_name) <= 40),
   constraint site_messages_content_length check (
     char_length(message_content) between 2 and 500
   )
 );
+
+-- 兼容已经创建过留言表的项目。
+alter table public.site_messages
+  add column if not exists is_approved boolean not null default false;
+alter table public.site_messages
+  add column if not exists approved_at timestamptz;
 
 alter table public.site_messages enable row level security;
 
@@ -48,3 +56,46 @@ $$;
 
 revoke all on function public.submit_site_message(text, text) from public;
 grant execute on function public.submit_site_message(text, text) to anon, authenticated;
+
+create or replace function public.set_site_message_approved_at()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  if new.is_approved and not old.is_approved then
+    new.approved_at := now();
+  elsif not new.is_approved then
+    new.approved_at := null;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists site_messages_approved_at on public.site_messages;
+create trigger site_messages_approved_at
+before update of is_approved on public.site_messages
+for each row
+execute function public.set_site_message_approved_at();
+
+create or replace function public.get_approved_site_messages(p_limit integer default 12)
+returns table (
+  id bigint,
+  visitor_name text,
+  message_content text,
+  created_at timestamptz
+)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select m.id, m.visitor_name, m.message_content, m.created_at
+  from public.site_messages as m
+  where m.is_approved = true
+  order by m.approved_at desc nulls last, m.created_at desc
+  limit least(greatest(coalesce(p_limit, 12), 1), 50);
+$$;
+
+revoke all on function public.get_approved_site_messages(integer) from public;
+grant execute on function public.get_approved_site_messages(integer) to anon, authenticated;

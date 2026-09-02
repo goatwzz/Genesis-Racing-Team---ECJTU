@@ -1942,6 +1942,75 @@ a {
   color: #a4212e;
 }
 
+.approved-messages {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.approved-messages-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.approved-messages-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.approved-messages-head span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.approved-message-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.approved-message-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.approved-message-card p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.approved-message-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.approved-message-meta strong {
+  color: #a4212e;
+  font-weight: 800;
+}
+
+.approved-message-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 22px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -2063,7 +2132,8 @@ a {
 
   .member-grid,
   .tech-grid,
-  .news-grid {
+  .news-grid,
+  .approved-message-list {
     grid-template-columns: 1fr;
   }
 
@@ -2132,6 +2202,12 @@ a {
 
   .site-message-actions {
     align-items: flex-end;
+  }
+
+  .approved-messages-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .footer-actions {

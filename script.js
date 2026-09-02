@@ -1303,6 +1303,7 @@ const messageContent = messageForm?.querySelector('[name="messageContent"]');
 const messageCount = document.querySelector("[data-message-count]");
 const messageSubmit = document.querySelector("[data-message-submit]");
 const messageFeedback = document.querySelector("[data-message-feedback]");
+const approvedMessageList = document.querySelector("[data-approved-message-list]");
 let activeGroup = teamGroups[0].name;
 
 const LIKE_STORAGE_KEY = "genesis-site-liked-v1";
@@ -1338,11 +1339,11 @@ async function callSupabaseRpc(functionName, payload = {}) {
   if (!response.ok) {
     throw new Error(`LIKES_API_${response.status}`);
   }
-  return Number(await response.json());
+  return response.json();
 }
 
 async function callLikesApi(functionName) {
-  return callSupabaseRpc(functionName);
+  return Number(await callSupabaseRpc(functionName));
 }
 
 function setLikeButtonState(hasLiked) {
@@ -1392,6 +1393,55 @@ function setMessageFeedback(text, type = "") {
   messageFeedback.classList.toggle("is-error", type === "error");
 }
 
+function formatMessageDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
+}
+
+function renderApprovedMessages(messages) {
+  if (!approvedMessageList) return;
+  approvedMessageList.replaceChildren();
+  if (!Array.isArray(messages) || messages.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "approved-message-empty";
+    empty.textContent = "暂无公开留言。";
+    approvedMessageList.append(empty);
+    return;
+  }
+
+  messages.forEach((message) => {
+    const card = document.createElement("article");
+    card.className = "approved-message-card";
+    const content = document.createElement("p");
+    content.textContent = String(message.message_content || "");
+    const meta = document.createElement("div");
+    meta.className = "approved-message-meta";
+    const name = document.createElement("strong");
+    name.textContent = String(message.visitor_name || "匿名访客");
+    const date = document.createElement("time");
+    date.dateTime = String(message.created_at || "");
+    date.textContent = formatMessageDate(message.created_at);
+    meta.append(name, date);
+    card.append(content, meta);
+    approvedMessageList.append(card);
+  });
+}
+
+async function loadApprovedMessages() {
+  if (!approvedMessageList) return;
+  try {
+    const messages = await callSupabaseRpc("get_approved_site_messages", { p_limit: 12 });
+    renderApprovedMessages(messages);
+  } catch (error) {
+    approvedMessageList.innerHTML = '<p class="approved-message-empty">公开留言暂时无法读取。</p>';
+  }
+}
+
 async function submitMessage(event) {
   event.preventDefault();
   if (!messageForm || !messageSubmit) return;
@@ -1422,7 +1472,7 @@ async function submitMessage(event) {
     localStorage.setItem(MESSAGE_COOLDOWN_KEY, String(Date.now()));
     messageForm.reset();
     messageCount.textContent = "0";
-    setMessageFeedback("留言已提交，感谢你的反馈。", "success");
+    setMessageFeedback("留言已提交，审核通过后将在首页展示。", "success");
   } catch (error) {
     setMessageFeedback(
       error.message === "LIKES_NOT_CONFIGURED"
@@ -1997,4 +2047,5 @@ renderFilters();
 renderGroupCards();
 renderCards();
 initializeLikes();
+loadApprovedMessages();
 showPage(window.location.hash.slice(1) || "home", false);
