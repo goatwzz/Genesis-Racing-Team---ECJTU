@@ -1018,6 +1018,119 @@ a {
   padding: 24px;
 }
 
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.news-year {
+  min-width: 0;
+}
+
+.news-year-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.news-year-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1;
+}
+
+.news-year-heading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.news-year-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 22px;
+}
+
+.news-card {
+  display: flex;
+  width: min(100%, 720px);
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.news-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.news-media {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: #e8edf1;
+}
+
+.news-media.is-multiple {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.news-media a {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.news-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.news-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.news-card-meta time {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-card h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.news-card-body p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
 .tech-card {
   display: flex;
   min-height: 330px;
@@ -2151,6 +2264,14 @@ a {
   .news-grid,
   .approved-message-list {
     grid-template-columns: 1fr;
+  }
+
+  .news-year-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-media img {
+    aspect-ratio: auto;
   }
 
   .competition-year-head,

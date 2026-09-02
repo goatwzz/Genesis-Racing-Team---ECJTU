@@ -1254,19 +1254,80 @@ const competitionTeams = [
 
 const newsItems = [
   {
-    tag: "竞赛",
-    title: "赛前整车联调",
-    text: "记录车辆调试、参数整定、赛道测试和组间协作过程，适合配现场照片。"
+    date: "2026-08-28",
+    tag: "队伍传承",
+    title: "王子铮队长离队深造",
+    text: "王子铮队长告别智能车队，前往华东理工大学继续深造。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-28-wang-zizheng-farewell.jpg",
+        alt: "王子铮队长在起源智能车队实验室留影"
+      }
+    ]
   },
   {
-    tag: "招新",
-    title: "新生训练营",
-    text: "展示入门培训、任务分组、阶段考核和优秀成员成长路径。"
+    date: "2026-08-27",
+    tag: "团队建设",
+    title: "智能车队团建活动",
+    text: "车队成员开展 KTV 唱歌与烧烤聚餐活动，在赛后交流中增进团队凝聚力。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-27-team-building-ktv.jpg",
+        alt: "起源智能车队成员参加 KTV 团建活动"
+      },
+      {
+        src: "assets/photos/news/2026/2026-08-27-team-building-bbq.jpg",
+        alt: "起源智能车队成员参加烧烤聚餐"
+      }
+    ]
   },
   {
-    tag: "技术",
-    title: "技术分享会",
-    text: "沉淀算法、电控、视觉、机械和软件工具链经验，形成长期可维护文档。"
+    date: "2026-08-23",
+    tag: "全国总决赛",
+    title: "第二十一届全国大学生智能汽车竞赛全国总决赛",
+    text: "全国总决赛期间，起源智能车队在安徽大学赛场合影留念。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-23-national-final-team.jpg",
+        alt: "起源智能车队参加第二十一届全国大学生智能汽车竞赛全国总决赛合影"
+      }
+    ]
+  },
+  {
+    date: "2026-08-23",
+    tag: "赛后交流",
+    title: "车队赛后聚餐",
+    text: "车队队员梁博安父亲宴请智能车队成员聚餐，大家共同回顾比赛经历。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-23-team-dinner.jpg",
+        alt: "起源智能车队成员赛后聚餐合影"
+      }
+    ]
+  },
+  {
+    date: "2026-08-17",
+    tag: "校际交流",
+    title: "南昌航空大学雁过留痕队来访交流",
+    text: "南昌航空大学雁过留痕队伍到访实验室，与起源智能车队围绕赛道、车辆和备赛经验开展交流学习。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-17-nchu-exchange.jpg",
+        alt: "南昌航空大学雁过留痕队与起源智能车队开展交流学习"
+      }
+    ]
+  },
+  {
+    date: "2026-08-16",
+    tag: "校友来访",
+    title: "电气学院校友参观智能车队",
+    text: "多位电气学院校友来到起源智能车队实验室，参观车辆、赛道和日常研发环境。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-16-alumni-visit.jpg",
+        alt: "电气学院校友参观起源智能车队实验室"
+      }
+    ]
   }
 ];
 
@@ -1822,13 +1883,45 @@ function renderCards() {
     `)
     .join("");
 
-  newsGrid.innerHTML = newsItems
-    .map((item) => `
-      <article class="news-card">
-        <span class="card-tag">${item.tag}</span>
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-      </article>
+  const newsByYear = newsItems.reduce((years, item) => {
+    const year = item.date.slice(0, 4);
+    years[year] = years[year] || [];
+    years[year].push(item);
+    return years;
+  }, {});
+
+  newsGrid.innerHTML = Object.entries(newsByYear)
+    .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+    .map(([year, items]) => `
+      <section class="news-year" aria-labelledby="news-year-${year}">
+        <div class="news-year-heading">
+          <h3 id="news-year-${year}">${year}</h3>
+          <span>${items.length} 条动态</span>
+        </div>
+        <div class="news-year-grid">
+          ${items
+            .sort((itemA, itemB) => itemB.date.localeCompare(itemA.date))
+            .map((item) => `
+              <article class="news-card">
+                <div class="news-media${item.images.length > 1 ? " is-multiple" : ""}">
+                  ${item.images.map((image) => `
+                    <a href="${image.src}" target="_blank" rel="noopener" aria-label="查看${item.title}现场照片大图">
+                      <img src="${image.src}" alt="${image.alt}" loading="lazy" decoding="async">
+                    </a>
+                  `).join("")}
+                </div>
+                <div class="news-card-body">
+                  <div class="news-card-meta">
+                    <span class="card-tag">${item.tag}</span>
+                    <time datetime="${item.date}">${Number(item.date.slice(5, 7))}月${Number(item.date.slice(8, 10))}日</time>
+                  </div>
+                  <h4>${item.title}</h4>
+                  <p>${item.text}</p>
+                </div>
+              </article>
+            `).join("")}
+        </div>
+      </section>
     `)
     .join("");
 }
