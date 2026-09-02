@@ -491,8 +491,7 @@ a {
 
 .member-card,
 .tech-card,
-.news-card,
-.honor-item {
+.news-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
@@ -1141,7 +1140,9 @@ a {
 
 .honor-list {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 250px));
+  justify-content: start;
+  gap: 20px;
 }
 
 .qa-section {
@@ -1400,34 +1401,49 @@ a {
 }
 
 .honor-item {
-  display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-  padding: 20px;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.honor-year {
-  color: var(--red);
-  font-size: 28px;
-  font-weight: 900;
+.honor-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.honor-image-link {
+  display: block;
+  padding: 10px;
+  background: #f2f4f7;
+}
+
+.honor-image-link img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 0.705;
+  object-fit: contain;
+  border-radius: 4px;
+  background: var(--white);
+}
+
+.honor-item figcaption {
+  padding: 14px 15px 16px;
 }
 
 .honor-item h3 {
-  margin: 0 0 4px;
-  font-size: 19px;
+  margin: 4px 0 5px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.45;
 }
 
-.honor-badge {
-  justify-self: end;
-  min-width: 88px;
-  padding: 7px 12px;
-  border: 1px solid rgba(200, 144, 45, 0.42);
-  border-radius: var(--radius);
-  color: #8c621b;
-  background: #fff7e8;
-  text-align: center;
-  font-weight: 800;
+.honor-item figcaption p {
+  margin: 0;
+  font-size: 13px;
 }
 
 .join-section {
@@ -2179,12 +2195,9 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .honor-item {
+  .honor-list {
     grid-template-columns: 1fr;
-  }
-
-  .honor-badge {
-    justify-self: start;
+    max-width: 360px;
   }
 }
 

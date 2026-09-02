@@ -580,6 +580,26 @@ const teamMembers = [
 }
   },
   {
+    name: "张晋豪",
+    group: "机械组",
+    meta: "PCB 设计 / 3D 建模 / 硬件协同",
+    bio: "2022级轨道交通信号与控制专业，参加第十九届全国大学生智能汽车竞赛镜头组 INF 和第二十届完全模型组，均获华东赛区二等奖，具备硬件设计、PCB 电路设计和 3D 建模等竞赛实践经验。",
+    initials: "张",
+    photo: "assets/photos/members/zhang-jinhao.jpg",
+    photoFit: "cover",
+    photoPosition: "center center",
+    details: {
+      "所在组别": "机械组",
+      "年级专业": "2022级轨道交通信号与控制专业",
+      "竞赛经历": "第十九届全国大学生智能汽车竞赛镜头组 INF；第二十届全国大学生智能汽车竞赛完全模型组",
+      "竞赛成果": "国家级\n1. 2025 年 7 月获全国大学生先进成图技术与产品信息建模创新大赛电子设计验证与创新赛道全国一等奖\n2. 2025 年 8 月获 2025 年全国大学生电子设计竞赛（E 题）全国二等奖\n\n省级\n1. 2024 年 7 月获第十九届全国大学生智能汽车竞赛镜头组 INF 华东赛区二等奖\n2. 2025 年 7 月获第二十届全国大学生智能汽车竞赛完全模型组华东赛区二等奖",
+      "负责方向": "PCB 电路设计、3D 建模、智能车硬件思路分享",
+      "毕业去向": "太原铁路局太原电务段",
+      "项目经历": "在全国大学生先进成图技术与产品信息建模创新大赛中主要负责 PCB 问题检查与报告撰写；第十九届智能车竞赛期间担任镜头组队长并负责硬件设计；第二十届智能车竞赛期间担任完全模型组队员，在负责硬件设计的同时完成部分元素判定代码。大二期间曾担任电子科技协会副会长，协助参与协会与基地管理。",
+      "个人感悟": "第一年参加智能车时，我的团队经验尚不成熟，技术能力也有所欠缺，最终成果并不算特别理想。第二年，或出于不甘心，或出于想证明自己的心情，我选择再次参加智能车竞赛。这一年的经历十分坎坷，最终与国赛名额失之交臂。虽然两次比赛都是省级二等奖，但带给我的体悟完全不同。\n\n第一年的经历告诉我，在团队协作项目中，积极的互动交流十分必要，不能抱着半吊子的心态，更要主动了解团队中每一位成员所做的内容，这样才能让最后的协同工作更有效率。\n\n第二年的经历告诉我，不要害怕看起来很难的方法，凡事要勇于尝试。我们很早就了解到上交迷宫法，却很晚才真正应用；由于对这一方法认识不深，走了很多弯路。如果能够早点钻研，就能为后续查漏补缺留下更多空间。团队协作还必须做到“有反馈”，让所有成员明确知道彼此做了什么、为什么这样做。做事也应尽可能细心；遇到自己无法确认的问题，应积极寻求其他成员帮助，共同思考、查漏补缺。\n\n在校园生活期间，能够两次参与这种大家共同为一个目标努力的事情，是我的荣幸；能在两年的竞赛旅程中结识许多珍贵的朋友，也是我的幸运。现在我已在太原电务段任职，更能体会到那段竞赛生活来之不易。工作之后仍会有各种比拼，但更多时候需要独自面对，也很难再找回学生时代共同奋斗的感觉。\n\n所以，我衷心希望每一位想加入智能车竞赛的学弟学妹都能坚持下去。这条路精彩而难忘，无论快乐还是痛苦的回忆，都会成为成长的助力。珍惜校园时光，莫要蹉跎自己的青春。"
+    }
+  },
+  {
     name: "谢超",
     group: "机械组",
     meta: "轮胎维护 / 辅助图像处理 / 整车装配",
@@ -795,25 +815,53 @@ const techItems = [
 
 const honors = [
   {
-    year: "2026",
-    title: "全国大学生智能汽车竞赛",
-    meta: "智能车竞赛 / 华东赛区 / 待补充组别",
-    text: "请替换为真实奖项等级、指导老师、参赛成员和证书照片。",
-    badge: "待补充"
+    image: "assets/photos/awards/2026/crazy-circuit-liao-kaihui.jpg",
+    topic: "疯狂电路",
+    award: "华东赛区一等奖（第 7 名）",
+    team: "狂流电驹队",
+    member: "廖开辉"
   },
   {
-    year: "2025",
-    title: "校级大学生科技创新项目",
-    meta: "项目立项 / 实验室建设 / 技术训练",
-    text: "用于展示车队项目训练、校内创新创业项目或学院重点支持成果。",
-    badge: "项目成果"
+    image: "assets/photos/awards/2026/crazy-circuit-pang-kai.jpg",
+    topic: "疯狂电路",
+    award: "华东赛区一等奖（第 7 名）",
+    team: "狂流电驹队",
+    member: "庞凯"
   },
   {
-    year: "2024",
-    title: "智能车队年度招新与训练营",
-    meta: "招新培训 / 技术分享 / 传承建设",
-    text: "可记录 C/C++、嵌入式、视觉算法、机械建模和整车调试培训。",
-    badge: "团队建设"
+    image: "assets/photos/awards/2026/ai-model-zhai-jiaju.jpg",
+    topic: "人工智能模型",
+    award: "华东赛区一等奖（第 5 名）",
+    team: "ECJTU Navigators",
+    member: "翟家驹"
+  },
+  {
+    image: "assets/photos/awards/2026/ai-model-fu-ruitao.jpg",
+    topic: "人工智能模型",
+    award: "华东赛区一等奖（第 5 名）",
+    team: "ECJTU Navigators",
+    member: "傅瑞涛"
+  },
+  {
+    image: "assets/photos/awards/2026/zouma-guanbei-wang-xutao.jpg",
+    topic: "走马观碑",
+    award: "全国总决赛一等奖",
+    team: "小马快跑队",
+    member: "汪旭涛"
+  },
+  {
+    image: "assets/photos/awards/2026/zouma-guanbei-zhang-yili.jpg",
+    topic: "走马观碑",
+    award: "全国总决赛一等奖",
+    team: "小马快跑队",
+    member: "张艺沥"
+  },
+  {
+    image: "assets/photos/awards/2026/robotaxi-xu-yibo.jpg",
+    topic: "智慧城市 Robotaxi",
+    award: "全国总决赛一等奖",
+    team: "ECJTU Navigators",
+    member: "徐诣博"
   }
 ];
 
@@ -1751,15 +1799,16 @@ function renderCards() {
 
   honorList.innerHTML = honors
     .map((item) => `
-      <article class="honor-item">
-        <div class="honor-year">${item.year}</div>
-        <div>
-          <span class="honor-meta">${item.meta}</span>
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
-        </div>
-        <span class="honor-badge">${item.badge}</span>
-      </article>
+      <figure class="honor-item">
+        <a class="honor-image-link" href="${item.image}" target="_blank" rel="noopener" aria-label="查看${item.member}的${item.topic}获奖证书大图">
+          <img src="${item.image}" alt="${item.member}在第二十一届全国大学生智能汽车竞赛${item.topic}项目的获奖证书" loading="lazy" decoding="async">
+        </a>
+        <figcaption>
+          <span class="honor-meta">2026 · ${item.topic}</span>
+          <h3>${item.award}</h3>
+          <p>${item.team} · ${item.member}</p>
+        </figcaption>
+      </figure>
     `)
     .join("");
 
