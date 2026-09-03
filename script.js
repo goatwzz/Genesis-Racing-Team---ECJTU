@@ -1328,6 +1328,102 @@ const newsItems = [
         alt: "电气学院校友参观起源智能车队实验室"
       }
     ]
+  },
+  {
+    date: "2026-08-16",
+    tag: "车队文化",
+    title: "完成智能车队队服与队旗设计",
+    text: "起源智能车队完成第 21 届队服与队旗设计，以统一的视觉形象展现车队文化与团队精神。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-16-team-uniform.jpg",
+        alt: "起源智能车队第 21 届队服正反面设计"
+      },
+      {
+        src: "assets/photos/news/2026/2026-08-16-team-flag.jpg",
+        alt: "起源智能车队第 21 届队旗设计"
+      }
+    ]
+  },
+  {
+    date: "2026-08-13",
+    tag: "全国总决赛",
+    title: "Robotaxi 组获全国一等奖",
+    text: "车队队员在山西农业大学参加第二十一届全国大学生智能汽车竞赛，获得 Robotaxi 组全国一等奖、全国第四名。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-13-robotaxi-finish.jpg",
+        alt: "起源智能车队 Robotaxi 组完成全国总决赛比赛"
+      },
+      {
+        src: "assets/photos/news/2026/2026-08-13-robotaxi-track.jpg",
+        alt: "起源智能车队队员在 Robotaxi 组全国总决赛现场调试"
+      },
+      {
+        src: "assets/photos/news/2026/2026-08-13-robotaxi-team.jpg",
+        alt: "起源智能车队 Robotaxi 组全国总决赛合影"
+      }
+    ]
+  },
+  {
+    date: "2026-08-02",
+    tag: "华东赛区",
+    title: "华东赛区获三项一等奖",
+    text: "车队队员在南京信息工程大学参加第二十一届全国大学生智能汽车竞赛华东赛区比赛，取得三项一等奖。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-08-02-east-china-team.jpg",
+        alt: "起源智能车队参加第二十一届全国大学生智能汽车竞赛华东赛区比赛合影"
+      }
+    ]
+  },
+  {
+    date: "2026-07-24",
+    tag: "校际交流",
+    title: "赴南昌大学开展备赛交流",
+    text: "起源智能车队前往南昌大学开展智能车备赛交流，与兄弟院校队伍分享车辆调试和赛事准备经验。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-07-24-nanchang-university-exchange.jpg",
+        alt: "起源智能车队在南昌大学开展智能车备赛交流"
+      }
+    ]
+  },
+  {
+    date: "2026-07-23",
+    tag: "经验传承",
+    title: "开展暑期电赛备赛讲解",
+    text: "车队队长王子铮为暑期备赛的大一新生讲解电赛学习方向，帮助队员明确训练重点。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-07-23-electronic-contest-training.jpg",
+        alt: "车队队长王子铮为大一新生讲解电赛备赛学习方向"
+      }
+    ]
+  },
+  {
+    date: "2026-07-15",
+    tag: "校际交流",
+    title: "赴南昌航空大学开展备赛交流",
+    text: "起源智能车队前往南昌航空大学开展智能车备赛交流，在互学互鉴中完善备赛方案。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-07-15-nchu-exchange.jpg",
+        alt: "起源智能车队在南昌航空大学开展智能车备赛交流"
+      }
+    ]
+  },
+  {
+    date: "2026-07-09",
+    tag: "技术实践",
+    title: "首架五寸无人机试飞成功",
+    text: "车队第一架五寸无人机在基础实验大楼外顺利完成首次起飞，为后续飞行调试积累实践经验。",
+    images: [
+      {
+        src: "assets/photos/news/2026/2026-07-09-five-inch-drone.jpg",
+        alt: "起源智能车队第一架五寸无人机在基础实验大楼外试飞"
+      }
+    ]
   }
 ];
 

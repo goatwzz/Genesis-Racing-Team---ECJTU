@@ -1083,6 +1083,15 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.news-media.is-multiple a {
+  aspect-ratio: 4 / 3;
+}
+
+.news-media.is-multiple img {
+  height: 100%;
+  object-fit: cover;
+}
+
 .news-media a {
   display: block;
   min-width: 0;
