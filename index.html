@@ -6,7 +6,7 @@
     <meta name="description" content="华东交通大学 Genesis 起源智能车队官网，展示实验室介绍、成员风采、技术方向、竞赛荣誉与招新信息。">
     <title>Genesis 起源智能车队 | 华东交通大学</title>
     <link rel="icon" href="assets/images/genesis-team-emblem.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=team-news-aligned-gallery-20260903">
+    <link rel="stylesheet" href="styles.css?v=round2-selection-20260916">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -297,16 +297,16 @@
 
         <div class="join-selection-reserve">
           <div>
-            <span class="join-reserve-status">暂未开放</span>
+            <span class="join-reserve-status is-published">资料已发布</span>
             <p class="eyebrow">Selection Task</p>
-            <h3>选拔赛题预留区</h3>
-            <p>参加车队选拔的同学须报名并参加 2026 年华东交通大学校“双基”智能车竞赛传统竞速组，完成报名后即可进入选拔赛题阶段。正式开放后，这里将发布各方向选拔任务、提交材料、评分维度、截止时间和答疑方式，重点考察学习过程、工程实现、问题排查与复盘表达能力。</p>
+            <h3>二轮选拔赛资料</h3>
+            <p>二轮选拔赛的赛事地图、竞赛规则与技术要求现已发布。请参赛同学查看赛道示意图，并下载完整 PDF 文件认真阅读。</p>
           </div>
           <div class="join-reserve-meta">
-            <span>算法 / 软件</span>
-            <span>电控 / 硬件</span>
-            <span>视觉 / 机械</span>
-            <button class="button button-primary" type="button" disabled aria-disabled="true">暂未开放</button>
+            <span>赛事地图</span>
+            <span>竞赛规则</span>
+            <span>技术要求</span>
+            <a class="button button-primary" href="#selection">查看二轮赛题</a>
           </div>
         </div>
       </section>
@@ -314,60 +314,36 @@
       <section class="section selection-section page-view" id="selection">
         <div class="section-heading">
           <p class="eyebrow">Selection Tasks</p>
-          <h2>选拔赛题</h2>
-          <p>参加选拔的同学须报名并参加 2026 年华东交通大学校“双基”智能车竞赛传统竞速组。选拔赛题暂未开放，开放后将在本页面发布任务、提交要求、评分维度和截止时间。</p>
+          <h2>二轮选拔赛题</h2>
+          <p>二轮选拔赛资料已经发布。下方可直接查看赛事地图，并下载《竞赛规则与技术要求》PDF 文件。</p>
         </div>
-        <div class="selection-layout">
-          <article class="selection-overview">
-            <h3>选拔说明</h3>
-            <p>当前内容为预留模板，不作为正式选拔要求。完成校赛报名后，请关注招新群和本页面通知；正式赛题发布后，再按所选方向完成任务并提交材料。</p>
+        <div class="selection-resource-layout">
+          <figure class="selection-map-card">
+            <img src="assets/images/genesis-round-2-course-map.png" alt="起源智能车队二轮选拔赛赛事地图，包含起点 P1、终点 P2、T1 至 T4 任务停车区、中央禁入区、减速带与砖块障碍">
+            <figcaption>二轮选拔赛赛事地图（点击图片可在新窗口查看原图）</figcaption>
+            <a class="selection-map-link" href="assets/images/genesis-round-2-course-map.png" target="_blank" rel="noopener" aria-label="在新窗口查看二轮选拔赛赛事地图原图"></a>
+          </figure>
+
+          <aside class="selection-download-panel" aria-labelledby="round-two-document-title">
+            <span class="selection-published-badge">正式资料</span>
+            <p class="eyebrow">Competition Document</p>
+            <h3 id="round-two-document-title">竞赛规则与技术要求</h3>
+            <p>文件包含二轮选拔赛的完整竞赛规则与技术要求。请下载并仔细阅读，具体比赛安排与执行要求以 PDF 文件及车队后续通知为准。</p>
             <dl>
               <div>
-                <dt>提交内容</dt>
-                <dd>源码、设计说明、调试记录、演示视频或实物照片。</dd>
+                <dt>文件格式</dt>
+                <dd>PDF · 10 页</dd>
               </div>
               <div>
-                <dt>提交方式</dt>
-                <dd>请替换为指定邮箱、QQ群文件或在线表单链接。</dd>
-              </div>
-              <div>
-                <dt>截止时间</dt>
-                <dd>请替换为本年度选拔截止日期。</dd>
+                <dt>文件大小</dt>
+                <dd>约 538 KB</dd>
               </div>
             </dl>
-          </article>
-          <div class="selection-task-list">
-            <article class="selection-task">
-              <span>算法 / 软件方向</span>
-              <h3>智能车路径跟踪仿真</h3>
-              <p>基于给定赛道点列或自建路径，实现车辆轨迹跟踪仿真，输出误差曲线、控制量变化和简短分析。</p>
-              <ul>
-                <li>完成路径读取、目标点搜索和控制器设计。</li>
-                <li>提交代码、运行截图和参数说明。</li>
-                <li>进阶：加入速度规划或扰动测试。</li>
-              </ul>
-            </article>
-            <article class="selection-task">
-              <span>电控 / 硬件方向</span>
-              <h3>传感器采集与电路调试</h3>
-              <p>完成一个传感器采集或电机控制小任务，说明接线、通信方式、数据处理和调试过程。</p>
-              <ul>
-                <li>提交原理说明、代码和测试结果。</li>
-                <li>记录遇到的问题和排查步骤。</li>
-                <li>进阶：绘制简单接口板或保护电路。</li>
-              </ul>
-            </article>
-            <article class="selection-task">
-              <span>视觉 / 机械方向</span>
-              <h3>赛道识别或结构设计小任务</h3>
-              <p>视觉方向完成基础图像处理与目标提取；机械方向完成传感器支架或车体安装结构建模。</p>
-              <ul>
-                <li>视觉：提交处理流程、效果图和误检分析。</li>
-                <li>机械：提交模型截图、尺寸说明和装配考虑。</li>
-                <li>进阶：结合真实场景做鲁棒性测试。</li>
-              </ul>
-            </article>
-          </div>
+            <div class="selection-document-actions">
+              <a class="button button-primary" href="assets/documents/genesis-round-2-selection-rules.pdf" download="华东交通大学起源智能车队二轮选拔赛_竞赛规则与技术要求.pdf">下载 PDF 文件</a>
+              <a class="selection-preview-link" href="assets/documents/genesis-round-2-selection-rules.pdf" target="_blank" rel="noopener">在线查看 PDF</a>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
